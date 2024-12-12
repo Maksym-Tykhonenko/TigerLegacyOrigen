@@ -186,7 +186,7 @@ const TigerLegacyOrigenProdactScreen = ({navigation, route}) => {
     (pid ? `&pid=${pid}` : '') +
     (!addPartToLinkOnce ? `&yhugh=true` : '');
 
-  //console.log('My product Url==>', product);
+  console.log('My product Url==>', product);
   //Alert.alert(product);
 
   //const customUserAgent = `Mozilla/5.0 (${deviceInfo.deviceSystemName}; ${deviceInfo.deviceModel}) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.1`;
@@ -213,7 +213,7 @@ const TigerLegacyOrigenProdactScreen = ({navigation, route}) => {
 
   const handleNavigationStateChange = navState => {
     const {url} = navState;
-    //console.log('NavigationState: ', navState);
+    console.log('NavigationState: ', navState);
     //console.log('navState: ', navState);
     if (
       url.includes(
@@ -257,7 +257,7 @@ const TigerLegacyOrigenProdactScreen = ({navigation, route}) => {
 
   const onShouldStartLoadWithRequest = event => {
     const {url} = event;
-    //console.log('onShouldStartLoadWithRequest========> ', event);
+    console.log('onShouldStartLoadWithRequest========> ', event);
 
     if (url.startsWith('mailto:')) {
       Linking.openURL(url);
@@ -281,7 +281,8 @@ const TigerLegacyOrigenProdactScreen = ({navigation, route}) => {
       url.startsWith('https://twitter.com/') ||
       url.startsWith('https://www.whatsapp.com/') ||
       url.startsWith('https://t.me/') ||
-      url.includes('https://web.telegram')
+      url.includes('https://web.telegram') //||
+      //url.includes('https://gate.mrbl.cc/payments/process/')
     ) {
       Linking.openURL(url);
       return false; // && checkNineUrl === product
@@ -432,13 +433,13 @@ const TigerLegacyOrigenProdactScreen = ({navigation, route}) => {
         source={{
           uri: product,
         }}
-        onOpenWindow={syntheticEvent => {
-          const {nativeEvent} = syntheticEvent;
-          const {targetUrl} = nativeEvent;
-          //console.log('syntheticEvent==>', syntheticEvent);
-          console.log('nativeEvent', nativeEvent);
-          console.log('targetUrl', targetUrl);
-        }}
+        //onOpenWindow={syntheticEvent => {
+        //  const {nativeEvent} = syntheticEvent;
+        //  const {targetUrl} = nativeEvent;
+        //  //console.log('syntheticEvent==>', syntheticEvent);
+        //  console.log('nativeEvent', nativeEvent);
+        //  console.log('targetUrl', targetUrl);
+        //}}
         onError={syntheticEvent => {
           const {nativeEvent} = syntheticEvent;
           //console.warn('WebView error: ', nativeEvent.code);
