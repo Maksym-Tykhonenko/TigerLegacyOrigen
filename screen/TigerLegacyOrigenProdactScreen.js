@@ -405,9 +405,9 @@ const TigerLegacyOrigenProdactScreen = ({navigation, route}) => {
           bottom: 0,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#124db5', // затемнення
+          backgroundColor: '#800f10', // затемнення
         }}>
-        <ActivityIndicator size="large" color="#fbb802" />
+        <ActivityIndicator size="large" color="#fff" />
       </View>
     );
   };
